@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>M&M music</title>
+</head>
+<body>
+    {% block content %}
+    <h2>{{info_message}}</h2>
+        <table>
+            <th>
+                <td>ID</td>
+                <td>Song Name</td>
+                <td>Price</td>
+                <td>Sold</td>
+            </th>
+            {% for row in song_list %}
+
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+
+
+
+            </tr>
+        {% endfor %}
+        </table>
+    {% endblock %}
+</body>
+</html>

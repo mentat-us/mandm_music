@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>M&M music</title>
+</head>
+<body>
+   <form action="/save_vote/{{song_id}}", method="post">
+       <select name="song_vote">
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+       </select>
+       <button type="submit" name="send_vote">Vote</button>
+   </form>
+</body>
+</html>

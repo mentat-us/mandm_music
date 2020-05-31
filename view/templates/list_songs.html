@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>M&M music</title>
+</head>
+<body>
+    {% block content %}
+    <h2>{{info_message}}</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Song Name</th>
+                <th>Composer Name</th>
+                <th>Composer Last Name</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th>Sold</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in song_list %}
+
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td><a href="/like_song/{{row[0]}}">LIKE</a></td>
+                <td><a href="/disp_vote_form/{{row[0]}}">VOTE</a></td>
+                <td><a href="">PURCHASE</a></td>
+                <td><a href="">PLAY</a></td>
+
+            </tr>
+            </tbody>
+
+        {% endfor %}
+        </table>
+    {% endblock %}
+</body>
+</html>
