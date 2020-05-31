@@ -34,7 +34,8 @@ SELECT distinct ls.song_id, sg.song_name, sg.price, CASE
 
 
 #display votedd songs
-SELECT song_name, price, duration, AVG(V.vote_value) AS v_val, COUNT(V.vote_value) AS count from vote AS V 
+SELECT song_name, price, duration, AVG(V.vote_value) AS v_val, 
+		COUNT(V.vote_value) AS count from vote AS V 
 		LEFT JOIN user AS U ON V.user_id = U.user_id
         LEFT JOIN song AS S ON V.song_id = S.song_id
         GROUP BY song_name

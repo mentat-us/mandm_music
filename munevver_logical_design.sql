@@ -10,6 +10,7 @@ CREATE TABLE user(
     e_mail VARCHAR(300),
     password VARCHAR(300)
 );
+
 CREATE TABLE customer (
 	user_id INT,
     national_id_number BIGINT PRIMARY KEY AUTO_INCREMENT,
