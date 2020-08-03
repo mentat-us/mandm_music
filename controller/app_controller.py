@@ -4,7 +4,7 @@ from flask import Flask, request, redirect, render_template, url_for, session
 app = Flask(__name__, template_folder='../view/templates')
 app.secret_key = "hedehudu12345678"
 
-db_model = DBModel("Mayakovski1900")
+db_model = DBModel("")
 
 ##Home page --> Display main menu
 @app.route("/")
